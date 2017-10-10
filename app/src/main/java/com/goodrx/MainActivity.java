@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        final AnalyticsApplication application = (AnalyticsApplication) getApplication();
         final Tracker tracker = application.getDefaultTracker();
 
         Button btn = (Button) findViewById(R.id.button);
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("test action")
                         .setLabel("test label")
                         .build());
+                application.dispatchEvents();
                 Toast.makeText(MainActivity.this, "event sent", Toast.LENGTH_LONG).show();
             }
         });
