@@ -17,7 +17,7 @@ public class AnalyticsApplication extends Application{
     public void onCreate() {
         super.onCreate();
         sAnalytics = GoogleAnalytics.getInstance(this);
-        sAnalytics.setLocalDispatchPeriod(1);
+        sAnalytics.setLocalDispatchPeriod(0);
     }
 
     /**
